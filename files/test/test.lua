@@ -1,0 +1,35 @@
+gok_test_final_boss = false
+
+local function gok_spawn_final_boss( x, y )
+	local entity_id = EntityLoad( "data/entities/animals/boss_centipede/boss_centipede.xml", x, y )
+	EntitySetComponentsWithTagEnabled( entity_id, "disabled_at_start", true )
+	EntitySetComponentsWithTagEnabled( entity_id, "enabled_at_start", false )
+	PhysicsSetStatic( entity_id, false )
+
+	EntityLoad( "data/entities/animals/boss_centipede/reference_point.xml", x, y )
+
+	local child_entities = EntityGetAllChildren( entity_id )
+	local child_to_remove = 0
+
+	if ( child_entities ~= nil ) then
+		for i,child_id in ipairs( child_entities ) do
+			if EntityHasTag( child_id, "protection" ) then
+				child_to_remove = child_id
+			end
+		end
+	end
+
+	if ( child_to_remove ~= 0 ) then
+		EntityKill( child_to_remove )
+	end
+end
+
+function gok_test( player_entity )
+	print('tttttttttttttttttttttttttttttt')
+	--EntitySetTransform( player_entity, 1540, 6050 ) -- forge
+	EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
+	local x, y = EntityGetTransform( player_entity )
+	EntityLoad( "mods/generals/files/orb_base.xml", x, y )
+	if gok_test_final_boss then gok_spawn_final_boss( x - 100, y - 100 ) end
+end
+

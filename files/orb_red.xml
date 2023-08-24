@@ -1,0 +1,60 @@
+<Entity tags="teleportable_NOT,polymorphable_NOT,orbit_projectile">
+  <LightComponent 
+    _enabled="1" 
+    r="255"
+    g="255"
+    b="255"
+    radius="64"
+    fade_out_time="0.75" >
+  </LightComponent>
+
+  <!-- note z index, changing sprite is first for ease of selection -->
+  <SpriteComponent 
+    _enabled="1"
+    alpha="1" 
+    image_file="" 
+    next_rect_animation="" 
+    rect_animation="" 
+    emissive="0"
+    offset_x="8"
+    offset_y="20"
+    z_index="21" >
+  </SpriteComponent>
+
+  <SpriteComponent 
+    _enabled="1"
+    alpha="0.6" 
+    image_file="data/items_gfx/orbs/orb_red.xml" 
+    next_rect_animation="" 
+    rect_animation="" 
+    emissive="0"
+    offset_x="0"
+    offset_y="0"
+    z_index="22" >
+  </SpriteComponent>
+
+  <SpriteComponent 
+    _enabled="1"
+    alpha="0.4" 
+    image_file="data/items_gfx/orbs/orb_red.xml" 
+    next_rect_animation="" 
+    rect_animation="" 
+    emissive="0"
+    offset_x="0"
+    offset_y="0"
+    z_index="20" >
+  </SpriteComponent>
+
+  <!--VariableStorageComponent
+    name="card_name"
+    value_string="LIGHT_BULLET"
+  /-->
+
+  <!--LuaComponent 
+    execute_on_added="1"
+    remove_after_executed="1"
+    script_source_file="data/scripts/items/orb_init.lua" 
+    >
+  </LuaComponent-->
+
+</Entity>

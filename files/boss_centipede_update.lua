@@ -1,0 +1,5 @@
+local entity_id = GetUpdatedEntityID()
+local x,y = EntityGetTransform( entity_id )
+local orb = EntityLoad( "files/orb_base.xml", x, y )
+print('-------------------------------', entity_id, x, y, orb)
+EntityAddChild( entity_id, orb )
