@@ -2,6 +2,7 @@ gok_boss_list = {
 	{
 		animal_icon = "fish_giga",
 		flag = "miniboss_fish",
+		flag_run = "miniboss_fish",
 		orbs = 4,
 	},
 	{
@@ -12,6 +13,7 @@ gok_boss_list = {
 	{
 		animal_icon = "maggot_tiny",
 		flag = "miniboss_maggot",
+		flag_run = "miniboss_maggot",
 		orbs = 4,
 	},
 	{
@@ -42,21 +44,25 @@ gok_boss_list = {
 	{
 		animal_icon = "gate_monster_a",
 		flag = "miniboss_gate_monsters",
+		flag_run = "$animal_gate_monster_a_killed",
 		orbs = 1,
 	},
 	{
 		animal_icon = "gate_monster_b",
 		flag = "miniboss_gate_monsters",
+		flag_run = "$animal_gate_monster_b_killed",
 		orbs = 0,
 	},
 	{
 		animal_icon = "gate_monster_c",
 		flag = "miniboss_gate_monsters",
+		flag_run = "$animal_gate_monster_c_killed",
 		orbs = 0,
 	},
 	{
 		animal_icon = "gate_monster_d",
 		flag = "miniboss_gate_monsters",
+		flag_run = "$animal_gate_monster_d_killed",
 		orbs = 1,
 	},
 	{

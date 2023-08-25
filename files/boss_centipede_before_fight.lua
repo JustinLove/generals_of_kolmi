@@ -15,16 +15,19 @@ end
 for b = 1,#gok_boss_list do
 	local boss = gok_boss_list[b]
 	for o = 1,boss.orbs do
-		local orb = EntityLoad( "mods/generals/files/orb_red.xml", x, y )
-		local sprite = EntityGetFirstComponent( orb, "SpriteComponent" )
-		if sprite then
-			if always_show_image or boss.flag == nil or HasFlagPersistent(boss.flag) then
-				ComponentSetValue2( sprite, 'image_file', 'data/ui_gfx/animal_icons/'..boss.animal_icon..'.png')
-			else
-				EntitySetComponentIsEnabled( orb, sprite, false )
+		local done = boss.flag_run and GameHasFlagRun(boss.flag_run)
+		if not done then
+			local orb = EntityLoad( "mods/generals/files/orb_red.xml", x, y )
+			local sprite = EntityGetFirstComponent( orb, "SpriteComponent" )
+			if sprite then
+				if always_show_image or boss.flag == nil or HasFlagPersistent(boss.flag) then
+					ComponentSetValue2( sprite, 'image_file', 'data/ui_gfx/animal_icons/'..boss.animal_icon..'.png')
+				else
+					EntitySetComponentIsEnabled( orb, sprite, false )
+				end
 			end
+			EntityAddChild( pivot, orb )
 		end
-		EntityAddChild( pivot, orb )
 	end
 end
 

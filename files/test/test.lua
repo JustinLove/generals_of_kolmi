@@ -24,10 +24,22 @@ local function gok_spawn_final_boss( x, y )
 	end
 end
 
+local function set_flags()
+	dofile_once( "mods/generals/files/boss_list.lua" )
+	for i = 1,#gok_boss_list do
+		local flag = gok_boss_list[i].flag_run
+		if flag then
+			GameAddFlagRun(gok_boss_list[i].flag_run)
+		end
+	end
+end
+
 function gok_test( player_entity )
+	--set_flags()
 	--EntitySetTransform( player_entity, 1540, 6050 ) -- forge
 	EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
 	local x, y = EntityGetTransform( player_entity )
 	if gok_test_final_boss then gok_spawn_final_boss( x - 100, y - 100 ) end
+
 end
 
