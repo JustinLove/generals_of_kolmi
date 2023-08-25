@@ -25,11 +25,9 @@ local function gok_spawn_final_boss( x, y )
 end
 
 function gok_test( player_entity )
-	print('tttttttttttttttttttttttttttttt')
 	--EntitySetTransform( player_entity, 1540, 6050 ) -- forge
 	EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
 	local x, y = EntityGetTransform( player_entity )
-	EntityLoad( "mods/generals/files/orb_base.xml", x, y )
 	if gok_test_final_boss then gok_spawn_final_boss( x - 100, y - 100 ) end
 end
 

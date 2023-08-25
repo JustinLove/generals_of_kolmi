@@ -1,6 +1,9 @@
 - bosses
 - orbs
 - ng+?
+you can just check save00/stats/[enemy].xml and look at the kill counter - hamis248
+DebugGetIsDevBuild()
+
 
 ```
 entities\animals\boss_alchemist\boss_alchemist.xml
