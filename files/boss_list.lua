@@ -36,7 +36,7 @@ gok_boss_list = {
 	},
 	{
 		animal_icon = "friend",
-		flag = nil,
+		flag = "final_secret_orb3",
 		orbs = 2,
 	},
 	{
