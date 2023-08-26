@@ -44,4 +44,10 @@ for i = 1,orbcount do
 	EntityAddChild( pivot, orb )
 end
 
+local var = EntityGetFirstComponent( pivot, "VariableStorageComponent" )
+if var then
+	ComponentSetValue2( var, 'value_int', orbcount )
+	--ComponentSetValue2( var, 'value_string', tostring(GameGetFrameNum()) ) -- outro effect test
+end
+
 EntityAddChild( entity_id, pivot )

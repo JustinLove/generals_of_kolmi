@@ -17,5 +17,6 @@
   <VariableStorageComponent
     name="orb_count"
     value_int="0"
+    value_string="0"
   />
 </Entity>

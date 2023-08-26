@@ -1,5 +1,5 @@
-local entity_id    = GetUpdatedEntityID()
-local x, y = EntityGetTransform( entity_id )
+local pivot    = GetUpdatedEntityID()
+local x, y = EntityGetTransform( pivot )
 y = y + 13
 
 local dists = { 50, 70, 90, 110, 130 }
@@ -11,10 +11,37 @@ local rings = {{}, {}, {}, {}, {}}
 local orbits
 local cx,cy,cw,ch = GameGetCameraBounds()
 if cx-cw < x and x < cx+cw*2 and cy-ch < y and y < cy+ch*2 then
-	orbits = EntityGetAllChildren( entity_id )
+	orbits = EntityGetAllChildren( pivot )
 end
 
 if orbits ~= nil then
+	local frame = GameGetFrameNum()
+	local outro_start = 0
+	local var = EntityGetFirstComponent( pivot, "VariableStorageComponent" )
+	if var then
+		outro_start = tonumber(ComponentGetValue2( var, 'value_string' ))
+	end
+
+	local dist_factor = 1
+	if outro_start > 0 then
+		local t = (frame - outro_start) / 120
+		-- https://easings.net/#easeInBack
+		local c1 = 1.70158;
+		local c3 = c1 + 1;
+
+		local progress = c3 * t * t * t - c1 * t * t;
+		if progress < 1 then
+			dist_factor = 1 - progress
+		else
+			dist_factor = 0
+			EntityRemoveFromParent(pivot)
+			EntityKill(pivot)
+			return
+		end
+	elseif GlobalsGetValue("FINAL_BOSS_ACTIVE") == "1" then
+		ComponentSetValue2( var, 'value_string', tostring(frame))
+	end
+
 	local count = 1
 	for r = 1,#min do
 		if #orbits >= min[r] then
@@ -38,7 +65,7 @@ if orbits ~= nil then
 
 	for r = 1,#rings do
 		local orbs = rings[r]
-		local dist = dists[r]
+		local dist = dists[r] * dist_factor
 		local spread = math.pi * 2 / #orbs
 		local speed = 0.05 / dist -- perimeter, but 2pi is just a constant
 		if r % 2 == 1 then
@@ -49,7 +76,7 @@ if orbits ~= nil then
 
 		for i,v in ipairs( orbs ) do
 			if EntityHasTag( v, "orbit_projectile" ) then
-				local angle = spread * id + GameGetFrameNum() * speed
+				local angle = spread * id + frame * speed
 				local rot = 0 -- - ( angle - math.pi * 0.5 )
 				
 				local px = x + math.cos( angle ) * dist

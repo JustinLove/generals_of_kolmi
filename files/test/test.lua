@@ -36,8 +36,7 @@ end
 
 function gok_test( player_entity )
 	--set_flags()
-	--EntitySetTransform( player_entity, 1540, 6050 ) -- forge
-	EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
+	--EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
 	local x, y = EntityGetTransform( player_entity )
 	if gok_test_final_boss then gok_spawn_final_boss( x - 100, y - 100 ) end
 
