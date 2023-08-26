@@ -1,5 +1,17 @@
 gok_boss_list = {
 	{
+		animal_icon = "friend",
+		flag_show = "final_secret_orb3",
+		flag_run = "miniboss_friend_super",
+		orbs = 4,
+	},
+	{
+		animal_icon = "friend",
+		flag_show = "final_secret_orb3",
+		flag_run = "miniboss_friend",
+		orbs = 1,
+	},
+	{
 		animal_icon = "fish_giga",
 		flag_show = "miniboss_fish",
 		flag_run = "miniboss_fish",
@@ -8,6 +20,7 @@ gok_boss_list = {
 	{
 		animal_icon = "boss_robot",
 		flag_show = "miniboss_robot",
+		flag_run = "miniboss_robot",
 		orbs = 4,
 	},
 	{
@@ -19,27 +32,26 @@ gok_boss_list = {
 	{
 		animal_icon = "boss_alchemist",
 		flag_show = "miniboss_alchemist",
+		flag_run = "miniboss_alchemist",
 		orbs = 2,
 	},
 	{
 		animal_icon = "boss_wizard",
 		flag_show = "miniboss_wizard",
+		flag_run = "miniboss_wizard",
 		orbs = 3,
 	},
 	{
 		animal_icon = "boss_pit",
 		flag_show = "miniboss_pit",
+		flag_run = "miniboss_pit",
 		orbs = 3,
 	},
 	{
 		animal_icon = "boss_ghost",
 		flag_show = "miniboss_ghost",
+		flag_run = "miniboss_ghost",
 		orbs = 3,
-	},
-	{
-		animal_icon = "friend",
-		flag_show = "final_secret_orb3",
-		orbs = 2,
 	},
 	{
 		animal_icon = "gate_monster_a",
@@ -68,11 +80,13 @@ gok_boss_list = {
 	{
 		animal_icon = "boss_dragon",
 		flag_show = "miniboss_dragon",
+		flag_run = "miniboss_dragon",
 		orbs = 1,
 	},
 	{
 		animal_icon = "boss_limbs",
 		flag_show = "miniboss_fish",
+		flag_run = "miniboss_fish",
 		orbs = 1,
 	},
 }
