@@ -8,7 +8,11 @@ local min = { 0, 7, 18, 32, 49 }
 local max = { 15, 36, 64, 98, 138 }
 local rings = {{}, {}, {}, {}, {}}
 
-local orbits = EntityGetAllChildren( entity_id )
+local orbits
+local cx,cy,cw,ch = GameGetCameraBounds()
+if cx-cw < x and x < cx+cw*2 and cy-ch < y and y < cy+ch*2 then
+	orbits = EntityGetAllChildren( entity_id )
+end
 
 if orbits ~= nil then
 	local count = 1
