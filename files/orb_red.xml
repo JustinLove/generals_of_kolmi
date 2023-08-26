@@ -45,16 +45,9 @@
     z_index="20" >
   </SpriteComponent>
 
-  <!--VariableStorageComponent
-    name="card_name"
-    value_string="LIGHT_BULLET"
-  /-->
-
-  <!--LuaComponent 
-    execute_on_added="1"
-    remove_after_executed="1"
-    script_source_file="data/scripts/items/orb_init.lua" 
-    >
-  </LuaComponent-->
+  <VariableStorageComponent
+    name="flag_run"
+    value_string=""
+  />
 
 </Entity>
