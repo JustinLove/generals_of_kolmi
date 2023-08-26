@@ -1,2 +1,1 @@
-local entity_id = GetUpdatedEntityID()
-local x,y = EntityGetTransform( entity_id )
+dofile_once( "mods/generals/files/boss_list.lua" )

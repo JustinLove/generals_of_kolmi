@@ -90,3 +90,15 @@ gok_boss_list = {
 		orbs = 1,
 	},
 }
+
+function gok_boss_orbcount()
+	local count = 0
+	for b = 1,#gok_boss_list do
+		local boss = gok_boss_list[b]
+		local done = boss.flag_run and GameHasFlagRun(boss.flag_run)
+		if not done then
+			count = count + boss.orbs
+		end
+	end
+	return count
+end
