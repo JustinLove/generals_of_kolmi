@@ -85,8 +85,8 @@ gok_boss_list = {
 	},
 	{
 		animal_icon = "boss_limbs",
-		flag_show = "miniboss_fish",
-		flag_run = "miniboss_fish",
+		flag_show = "card_unlocked_pyramid",
+		flag_run = "miniboss_limbs",
 		orbs = 1,
 	},
 }
