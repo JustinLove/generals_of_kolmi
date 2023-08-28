@@ -1,26 +1,43 @@
-gok_test_final_boss = false
+local function basic_boss(name, xml, damage, tipe)
+	return {
+		name = name,
+		spawn = function(x, y)
+			local entity_id = EntityLoad( xml, x, y )
+			EntityInflictDamage( entity_id, damage or 1000, tipe or "DAMAGE_PROJECTILE", "", "NONE", 0, 0 )
+		end,
+	}
+end
 
-local function gok_spawn_final_boss( x, y )
-	local entity_id = EntityLoad( "data/entities/animals/boss_centipede/boss_centipede.xml", x, y )
-	EntitySetComponentsWithTagEnabled( entity_id, "disabled_at_start", true )
-	EntitySetComponentsWithTagEnabled( entity_id, "enabled_at_start", false )
-	PhysicsSetStatic( entity_id, false )
+gok_test_boss_death_list = {
+	{
+		name = 'friend_super',
+		spawn = function(x, y)
+			GlobalsSetValue( "ULTIMATE_KILLER_KILLS", "9" )
+			local entity_id = EntityLoad( 'data/entities/animals/friend.xml', x, y )
+			EntityInflictDamage( entity_id, 100000, "DAMAGE_DRILL", "", "NONE", 0, 0 )
+		end,
+	},
+	basic_boss( 'friend', 'data/entities/animals/friend.xml' ),
+	basic_boss( 'fish_giga', 'data/entities/animals/boss_fish/fish_giga.xml', 100000, "DAMAGE_EXPLOSION" ),
+	basic_boss( 'boss_robot', 'data/entities/animals/boss_robot/boss_robot.xml', 1000, "DAMAGE_ELECTRICITY" ),
+	basic_boss( 'maggot_tiny', 'data/entities/animals/maggot_tiny/maggot_tiny.xml', 1000, "DAMAGE_EXPLOSION" ),
+	basic_boss( 'boss_alchemist', 'data/entities/animals/boss_alchemist/boss_alchemist.xml' ),
+	basic_boss( 'boss_wizard', 'mods/generals/files/test/test_wizard.xml' ),
+	basic_boss( 'boss_pit', 'mods/generals/files/test/test_pit.xml' ),
+	basic_boss( 'boss_ghost', 'data/entities/animals/boss_ghost/boss_ghost.xml', 1000, 'DAMAGE_EXPLOSION' ),
+	basic_boss( 'gate_monster_a', 'data/entities/animals/boss_gate/gate_monster_a.xml' ),
+	basic_boss( 'gate_monster_b', 'data/entities/animals/boss_gate/gate_monster_b.xml' ),
+	basic_boss( 'gate_monster_c', 'data/entities/animals/boss_gate/gate_monster_c.xml' ),
+	basic_boss( 'gate_monster_d', 'data/entities/animals/boss_gate/gate_monster_d.xml' ),
+	basic_boss( 'boss_dragon', 'mods/generals/files/test/test_dragon.xml' ),
+	basic_boss( 'boss_limbs', 'data/entities/animals/boss_limbs/boss_limbs.xml', 50 ),
+}
 
-	EntityLoad( "data/entities/animals/boss_centipede/reference_point.xml", x, y )
-
-	local child_entities = EntityGetAllChildren( entity_id )
-	local child_to_remove = 0
-
-	if ( child_entities ~= nil ) then
-		for i,child_id in ipairs( child_entities ) do
-			if EntityHasTag( child_id, "protection" ) then
-				child_to_remove = child_id
-			end
+function gok_test_boss_death(name, x, y)
+	for i = 1,#gok_test_boss_death_list do
+		if gok_test_boss_death_list[i].id == id then
+			gok_test_boss_death_list[i].spawn(x, y)
 		end
-	end
-
-	if ( child_to_remove ~= 0 ) then
-		EntityKill( child_to_remove )
 	end
 end
 
@@ -38,7 +55,5 @@ function gok_test( player_entity )
 	--set_flags()
 	--EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
 	local x, y = EntityGetTransform( player_entity )
-	if gok_test_final_boss then gok_spawn_final_boss( x - 100, y - 100 ) end
-
 end
 

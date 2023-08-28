@@ -1,0 +1,29 @@
+<Entity >
+  <DamageModelComponent 
+          hp="60"
+    ragdoll_filenames_file=""
+    blood_material="blood"
+    blood_spray_material="blood"
+    ragdoll_offset_y="-14"
+    fire_probability_of_ignition="0"
+    ragdoll_fx_forced="DISINTEGRATED"
+    ragdoll_material="blood"
+    critical_damage_resistance="1.0"
+    physics_objects_damage="0"
+    >
+    <damage_multipliers
+    projectile="0.4"
+    explosion="0.1"
+    electricity="0.2"
+    fire="0.4"
+    ice="0.1"
+    >
+    </damage_multipliers>
+  </DamageModelComponent>
+
+  <LuaComponent
+    script_death = "data/entities/animals/boss_wizard/death.lua"
+    execute_every_n_frame = "-1"
+    >
+  </LuaComponent>
+</Entity>

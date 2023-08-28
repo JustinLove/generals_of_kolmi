@@ -1,0 +1,30 @@
+<Entity >
+	<DamageModelComponent 
+		_enabled="1" 
+		air_needed="0" 
+		falling_damages="0" 
+		fire_damage_amount="0" 
+		fire_how_much_fire_generates="0" 
+		fire_probability_of_ignition="0" 
+		hp="120" 
+		materials_damage="1" 
+		materials_how_much_damage="0.1" 
+		materials_that_damage="acid" 
+		ragdoll_filenames_file=""
+		ragdoll_offset_y="-6"
+		>
+		<damage_multipliers
+			explosion="0.5"
+			fire="0.5"
+			ice="0.5"
+			electricity="0.3"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+  <LuaComponent
+		script_death = "data/scripts/animals/boss_dragon_death.lua"
+		execute_every_n_frame = "-1"
+    >
+  </LuaComponent>
+</Entity>
