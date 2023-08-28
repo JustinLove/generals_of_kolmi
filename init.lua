@@ -26,6 +26,10 @@ function OnModInit()
 		--ModLuaFileAppend( "data/entities/animals/boss_centipede/boss_centipede_update.lua", "mods/generals/files/test/kill_final_boss.lua" )
 	end
 
+	if ModIsEnabled( 'Cheat Menu by Everfades' ) then
+		ModLuaFileAppend( "mods/Cheat Menu by Everfades/files/locations.lua", "mods/generals/files/Cheat Menu by Everfades/locations.lua" )
+	end
+
 	gok_edit_files()
 end
 
