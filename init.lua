@@ -14,6 +14,8 @@ end
 function OnModInit()
 	ModLuaFileAppend( "data/entities/animals/boss_centipede/boss_centipede_before_fight.lua", "mods/generals/files/boss_centipede_before_fight.lua" )
 
+	ModLuaFileAppend( "data/scripts/newgame_plus.lua", "mods/generals/files/newgame_plus/newgame_plus.lua" )
+
 	if ModIsEnabled( 'Cheat Menu by Everfades' ) then
 		ModLuaFileAppend( "mods/Cheat Menu by Everfades/files/locations.lua", "mods/generals/files/Cheat Menu by Everfades/locations.lua" )
 		ModLuaFileAppend( "data/example_gui/gui.lua", "mods/generals/files/Cheat Menu by Everfades/deaths.lua" )

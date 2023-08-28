@@ -1,5 +1,5 @@
 - x activate effect
-- reset flags on ng+
+- x reset flags on ng+
   - might need separate boss flags
 
 can't read file:
