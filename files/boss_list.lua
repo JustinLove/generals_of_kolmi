@@ -1,3 +1,10 @@
+--[[
+animal_icon: data/ui_gfx/animal_icons key.
+flag_show: AddFlagPersistent - has the boss ever been killed, allows showing the boss animal icon on the visualizer orbs. Mods responsible for setting flag in new bosses.
+flag_run: GameAddFlagRun - check for whether the boss has been killed this run. Mods responsible for setting flag in new bosses.
+orbs: Kolmi orb levels added if not defeated, vanilla bosses range 1-4.
+]]
+
 gok_boss_list = {
 	{
 		animal_icon = "friend",
