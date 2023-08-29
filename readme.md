@@ -8,13 +8,22 @@ Provides a strength visualizer at Kolmisilmä. Boss icons are only visible if yo
 
 ## Mod Interactions
 
-This mod includes NO compatibility for other mods, or for vanilla game modes.
+### Supported:
 
-## Mod Extension
+- NG+
+
+### Known unsupported:
+
+- Famine
+- Nightmare
+
+This mod includes no support for additional mod bosses.
+
+### Mod Extension
 
 To support additional bosses, append to
 
 `mods/generals_of_kolmi/files/boss_list.lua"`
 
-Add entries to `gok_boss_list`, see file for currently supported fields. Mods are responsible for setting `flag_show` (`AddFlagPersistent` has-ever-killed) and `flag_run` (`GameAddFlagRun` killed this run)
+Add entries to `gok_boss_list`, see file for currently supported fields. Mods are responsible for setting `flag_show` (`AddFlagPersistent` has ever killed) and `flag_run` (`GameAddFlagRun` killed this run)
 

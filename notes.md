@@ -3,8 +3,8 @@
   - might need separate boss flags
 - x readme
 - x extension notes
+- x ng+ bosses
 - famine compat?
-- ng+ bosses
 - nightmare bosses
 - copy to bbcode
 

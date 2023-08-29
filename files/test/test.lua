@@ -53,7 +53,7 @@ end
 
 function gok_test( player_entity )
 	--set_flags()
-	--EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
+	EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
 	local x, y = EntityGetTransform( player_entity )
 end
 

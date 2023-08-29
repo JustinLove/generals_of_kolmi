@@ -98,6 +98,29 @@ gok_boss_list = {
 	},
 }
 
+gok_newgameplus = {
+	friend = 0,
+	boss_robot = 0,
+	boss_alchemist = 0,
+	boss_wizard = 0,
+	boss_ghost = 0,
+	gate_monster_a = 0,
+	gate_monster_b = 0,
+	gate_monster_c = 0,
+	gate_monster_d = 0,
+	boss_limbs = 0,
+}
+
+if tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) > 0 then
+	for i = 1,#gok_boss_list do
+		local boss = gok_boss_list[i]
+		local ngp = gok_newgameplus[boss.animal_icon]
+		if ngp ~= nil then
+			boss.orbs = ngp
+		end
+	end
+end
+
 function gok_boss_orbcount()
 	local count = 0
 	for b = 1,#gok_boss_list do
