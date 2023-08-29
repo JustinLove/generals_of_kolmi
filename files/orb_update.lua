@@ -1,4 +1,4 @@
-dofile_once( "mods/generals/files/boss_list.lua" )
+dofile_once( "mods/generals_of_kolmi/files/boss_list.lua" )
 
 local pivot = GetUpdatedEntityID()
 local x, y = EntityGetTransform( pivot )
@@ -42,7 +42,7 @@ function update_orbs()
 	end
 	local add = orbcount - visualcount
 	for i = 1,add do
-		local orb = EntityLoad( "mods/generals/files/orb_blue.xml", x, y )
+		local orb = EntityLoad( "mods/generals_of_kolmi/files/orb_blue.xml", x, y )
 		EntityAddChild( pivot, orb )
 	end
 end

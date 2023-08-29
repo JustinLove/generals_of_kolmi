@@ -1,4 +1,4 @@
-dofile_once( "mods/generals/files/test/test.lua" )
+dofile_once( "mods/generals_of_kolmi/files/test/test.lua" )
 
 function gok_boss_death(item)
 	local x,y = EntityGetTransform(EntityGetWithTag( "player_unit" )[1])

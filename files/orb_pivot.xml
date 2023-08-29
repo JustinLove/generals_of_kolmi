@@ -3,13 +3,13 @@
   </InheritTransformComponent>
 
   <LuaComponent
-    script_source_file="mods/generals/files/orb_rotation.lua"
+    script_source_file="mods/generals_of_kolmi/files/orb_rotation.lua"
     execute_every_n_frame="1"
     >
   </LuaComponent>
 
   <LuaComponent
-    script_source_file="mods/generals/files/orb_update.lua"
+    script_source_file="mods/generals_of_kolmi/files/orb_update.lua"
     execute_every_n_frame="600"
     >
   </LuaComponent>

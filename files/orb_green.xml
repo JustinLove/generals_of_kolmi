@@ -1,7 +1,7 @@
 <Entity tags="teleportable_NOT,polymorphable_NOT,orbit_projectile">
-  <Base file="mods/generals/files/orb_blue.xml">
+  <Base file="mods/generals_of_kolmi/files/orb_blue.xml">
     <SpriteComponent 
-      image_file="mods/generals/files/orb_green_anim.xml" 
+      image_file="mods/generals_of_kolmi/files/orb_green_anim.xml" 
       >
     </SpriteComponent>
   </Base>
