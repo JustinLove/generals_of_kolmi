@@ -16,6 +16,10 @@ function OnModInit()
 
 	ModLuaFileAppend( "data/scripts/newgame_plus.lua", "mods/generals_of_kolmi/files/newgame_plus/newgame_plus.lua" )
 
+	if ModIsEnabled( 'Famine' ) then
+		ModLuaFileAppend( "mods/generals_of_kolmi/files/boss_list.lua", "mods/generals_of_kolmi/files/Famine/boss_list.lua" )
+	end
+
 	if ModIsEnabled( 'Cheat Menu by Everfades' ) then
 		ModLuaFileAppend( "mods/Cheat Menu by Everfades/files/locations.lua", "mods/generals_of_kolmi/files/Cheat Menu by Everfades/locations.lua" )
 		ModLuaFileAppend( "data/example_gui/gui.lua", "mods/generals_of_kolmi/files/Cheat Menu by Everfades/deaths.lua" )

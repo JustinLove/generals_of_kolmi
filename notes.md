@@ -4,7 +4,8 @@
 - x readme
 - x extension notes
 - x ng+ bosses
-- famine compat?
+- x move ng+ eval? separate field for ng+ orbs?
+- x famine compat?
 - nightmare bosses
 - copy to bbcode
 

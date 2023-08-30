@@ -12,11 +12,17 @@ for i = 1,newgame_n do
 	EntityAddChild( pivot, orb )
 end
 
+local orbs = 'orbs'
+if newgame_n > 0 then
+	orbs = 'orbs_ngp'
+end
+
+
 for b = 1,#gok_boss_list do
 	local boss = gok_boss_list[b]
 	local done = boss.flag_run and GameHasFlagRun(boss.flag_run)
 	if not done then
-		for o = 1,boss.orbs do
+		for o = 1,boss[orbs] do
 			local orb = EntityLoad( "mods/generals_of_kolmi/files/orb_red.xml", x, y )
 			if boss.flag_run then
 				GameAddFlagRun('gok_'..boss.flag_run)

@@ -10,11 +10,11 @@ Provides a strength visualizer at Kolmisilmä. Boss icons are only visible if yo
 
 ### Supported:
 
+- Famine - acts only as a visualizer for Famine 1.2 numbers
 - NG+
 
 ### Known unsupported:
 
-- Famine
 - Nightmare
 
 This mod includes no support for additional mod bosses.

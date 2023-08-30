@@ -29,7 +29,9 @@ function gok_edit_files()
 		--return content .. translations .. gok_wand_upgrade_translations
 	--end)
 
-	edit_file( "data/entities/animals/boss_centipede/boss_centipede_update.lua", boss_orbcount )
+	if not ModIsEnabled('Famine') then
+		edit_file( "data/entities/animals/boss_centipede/boss_centipede_update.lua", boss_orbcount )
+	end
 
 	text_file_append( "data/entities/animals/boss_robot/death.lua", "mods/generals_of_kolmi/files/death/boss_robot.lua" )
 	text_file_append( "data/entities/animals/boss_alchemist/death.lua", "mods/generals_of_kolmi/files/death/boss_alchemist.lua" )
