@@ -48,7 +48,7 @@ function update_orbs()
 end
 
 local cx,cy,cw,ch = GameGetCameraBounds()
-if cx-cw < x and x < cx+cw*2 and cy-ch < y and y < cy+ch*2 then
+if cx-cw*2 < x and x < cx+cw*4 and cy-ch*2 < y and y < cy+ch*4 then
 	update_bosses()
 	update_orbs()
 end

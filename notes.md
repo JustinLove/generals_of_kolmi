@@ -8,7 +8,6 @@
 - x famine compat?
 - x can see update when returning
 - x wrong total for friend
-- slowdown update when not near
 - nightmare bosses
 - copy to bbcode
 
