@@ -10,7 +10,7 @@ function update_bosses()
 		local boss = gok_boss_list[b]
 		if boss.flag_run then
 			--GameAddFlagRun(boss.flag_run)
-			local flag_orb = 'gok_'..boss.flag_run
+			local flag_orb = 'gok_orbs_present_'..boss.flag_run
 			if GameHasFlagRun(boss.flag_run) and GameHasFlagRun(flag_orb) then
 				GameRemoveFlagRun(flag_orb)
 				local orbits = EntityGetAllChildren( pivot )

@@ -27,3 +27,13 @@ To support additional bosses, append to
 
 Add entries to `gok_boss_list`, see file for currently supported fields. Mods are responsible for setting `flag_show` (`AddFlagPersistent` has ever killed) and `flag_run` (`GameAddFlagRun` killed this run)
 
+For orb destroy effects on kill, add to the boss death script:
+
+```
+  if ModIsEnabled('generals_of_kolmi') then
+    dofile_once( "mods/generals_of_kolmi/files/destroy_effect.lua" )
+    gok_destroy_effect( GetUpdatedEntityID(), "miniboss_my_boss_flag_run" )
+  end
+```
+
+This should run before GameAddFlagRun so it can skip the effect if the flag is already set.

@@ -35,7 +35,7 @@ gok_test_boss_death_list = {
 
 function gok_test_boss_death(name, x, y)
 	for i = 1,#gok_test_boss_death_list do
-		if gok_test_boss_death_list[i].id == id then
+		if gok_test_boss_death_list[i].name == name then
 			gok_test_boss_death_list[i].spawn(x, y)
 		end
 	end
@@ -55,5 +55,9 @@ function gok_test( player_entity )
 	--set_flags()
 	--EntitySetTransform( player_entity, 3500, 13000 ) -- kolmi
 	local x, y = EntityGetTransform( player_entity )
+	--gok_test_boss_death('boss_dragon', x, y - 100)
+	--dofile_once( "mods/generals_of_kolmi/files/destroy_effect.lua" )
+	--gok_destroy_effect( player_entity, "miniboss_dragon" )
+	--gok_destroy_effect( player_entity, "miniboss_fish" )
 end
 

@@ -25,7 +25,7 @@ for b = 1,#gok_boss_list do
 		for o = 1,boss[orbs] do
 			local orb = EntityLoad( "mods/generals_of_kolmi/files/orb_red.xml", x, y )
 			if boss.flag_run then
-				GameAddFlagRun('gok_'..boss.flag_run)
+				GameAddFlagRun('gok_orbs_present_'..boss.flag_run)
 				local var = EntityGetFirstComponent( orb, "VariableStorageComponent" )
 				if var then
 					ComponentSetValue2( var, 'value_string', boss.flag_run )

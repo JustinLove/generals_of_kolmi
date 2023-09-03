@@ -1,0 +1,12 @@
+<Entity>
+  <LuaComponent
+    script_source_file="mods/generals_of_kolmi/files/destroy_rotate.lua"
+    execute_every_n_frame="1"
+    >
+  </LuaComponent>
+
+  <VariableStorageComponent
+    name="start"
+    value_int="0"
+  />
+</Entity>
