@@ -6,6 +6,9 @@
 - x ng+ bosses
 - x move ng+ eval? separate field for ng+ orbs?
 - x famine compat?
+- x can see update when returning
+- wrong total for friend
+- slowdown update when not near
 - nightmare bosses
 - copy to bbcode
 

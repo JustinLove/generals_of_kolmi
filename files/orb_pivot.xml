@@ -10,7 +10,7 @@
 
   <LuaComponent
     script_source_file="mods/generals_of_kolmi/files/orb_update.lua"
-    execute_every_n_frame="600"
+    execute_every_n_frame="240"
     >
   </LuaComponent>
 
