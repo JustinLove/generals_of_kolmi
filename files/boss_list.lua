@@ -11,7 +11,7 @@ gok_boss_list = {
 		animal_icon = "friend",
 		flag_show = "final_secret_orb3",
 		flag_run = "miniboss_friend_super",
-		orbs = 4,
+		orbs = 3,
 		orbs_ngp = 0,
 	},
 	{
