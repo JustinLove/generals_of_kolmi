@@ -6,7 +6,7 @@ local orbs
 orbs = EntityGetAllChildren( pivot )
 
 if orbs ~= nil then
-	local dist = 20
+	local dist = 60
 	local shake = 1
 	local frame = GameGetFrameNum()
 	SetRandomSeed( frame, x+y)
@@ -19,10 +19,6 @@ if orbs ~= nil then
 		return
 	end
 
-	if #orbs < 2 then
-		dist = 0
-	end
-
 	if outro_start > 0 then
 		local t = (frame - outro_start) / 240
 		local s = t*shake
@@ -32,9 +28,11 @@ if orbs ~= nil then
 			for i,v in ipairs( orbs ) do
 				if EntityHasTag( v, "orbit_projectile" ) then
 					EntityConvertToMaterial( v, 'fire' )
+					EntityRemoveFromParent(v)
 					EntityKill(v)
 				end
 			end
+			EntityRemoveFromParent(pivot)
 			EntityKill(pivot)
 			GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/orb_distant_monster/create", x, y )
 			GameScreenshake( 100 )
