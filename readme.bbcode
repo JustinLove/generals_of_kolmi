@@ -11,7 +11,7 @@ Provides a strength visualizer at Kolmisilmä. Boss icons are only visible if yo
 [h3]Supported:[/h3]
 [list]
 [*] Famine - acts only as a visualizer for Famine 1.2 numbers
-[*] NG+
+[*] [/spoiler]NG+[/spoiler]
 [/list]
 
 [h3]Known unsupported:[/h3]
@@ -27,7 +27,7 @@ To support additional bosses, append to
 
 [code]mods/generals_of_kolmi/files/boss_list.lua[/code]
 
-Add entries to [code]gok_boss_list[/code], see file for currently supported fields. Mods are responsible for setting [code]flag_show[/code] ([/code]AddFlagPersistent[/code] has ever killed) and [code]flag_run[/code] ([code]GameAddFlagRun[/code] killed this run)
+Add entries to gok_boss_list, see file for currently supported fields. Mods are responsible for setting flag_show (AddFlagPersistent has ever killed) and flag_run (GameAddFlagRun killed this run)
 
 For orb destroy effects on kill, add to the boss death script:
 
