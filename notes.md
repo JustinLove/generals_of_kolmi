@@ -8,6 +8,7 @@
 - x famine compat?
 - x can see update when returning
 - x wrong total for friend
+- x check kolmi animate-out time/speed
 - nightmare bosses
 - copy to bbcode
 

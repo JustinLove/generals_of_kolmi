@@ -15,7 +15,7 @@ if cx-cw < x and x < cx+cw*2 and cy-ch < y and y < cy+ch*2 then
 end
 
 if orbits ~= nil then
-	local frame = GameGetFrameNum()
+	local frame = GameGetFrameNum() -- + (60*120) -- after playing two hours
 	local outro_start = 0
 	local var = EntityGetFirstComponent( pivot, "VariableStorageComponent" )
 	if var then
@@ -67,7 +67,9 @@ if orbits ~= nil then
 		local orbs = rings[r]
 		local dist = dists[r] * dist_factor
 		local spread = math.pi * 2 / #orbs
-		local speed = 0.05 / dist -- perimeter, but 2pi is just a constant
+		-- perimeter, but 2pi is just a constant
+		-- if we used dist, dist_factor would be get multiplied by the elapsed frames causing a super speedup
+		local speed = 0.05 / dists[r]
 		if r % 2 == 1 then
 			speed = speed * -1
 		end
