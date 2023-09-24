@@ -1,0 +1,41 @@
+[h1]Generals of Kolmisilmä[/h1]
+
+Main boss is stronger, defeat other bosses to weaken it.
+
+This re-implements a mechanic from BestBardTopNA's [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2759088032]Famine[/url]. Famine has many interesting ideas that work together, but the boss mechanic in particular resists just speedrunning to the end, which can be used as a challenge by itself, or used as speedrun resistance for other types of challenge runs. The power level assigned to each miniboss is slightly different than Famine.
+
+Provides a strength visualizer at Kolmisilmä. Boss icons are only visible if you have the progress flag for the accompanying boss, so it can spoil that more bosses exist, but not their image.
+
+[h2]Mod Interactions[/h2]
+
+[h3]Supported:[/h3]
+[list]
+[*] Famine - acts only as a visualizer for Famine 1.2 numbers
+[*] NG+
+[/list]
+
+[h3]Known unsupported:[/h3]
+[list]
+[*] Nightmare
+[/list]
+
+This mod includes no support for additional mod bosses.
+
+[h3]Mod Extension[/h3]
+
+To support additional bosses, append to
+
+[code]mods/generals_of_kolmi/files/boss_list.lua[/code]
+
+Add entries to [code]gok_boss_list[/code], see file for currently supported fields. Mods are responsible for setting [code]flag_show[/code] ([/code]AddFlagPersistent[/code] has ever killed) and [code]flag_run[/code] ([code]GameAddFlagRun[/code] killed this run)
+
+For orb destroy effects on kill, add to the boss death script:
+
+[code]
+  if ModIsEnabled('generals_of_kolmi') then
+    dofile_once( "mods/generals_of_kolmi/files/destroy_effect.lua" )
+    gok_destroy_effect( GetUpdatedEntityID(), "miniboss_my_boss_flag_run" )
+  end
+[/code]
+
+This should run before GameAddFlagRun so it can skip the effect if the flag is already set.

@@ -23,7 +23,7 @@ This mod includes no support for additional mod bosses.
 
 To support additional bosses, append to
 
-`mods/generals_of_kolmi/files/boss_list.lua"`
+`mods/generals_of_kolmi/files/boss_list.lua`
 
 Add entries to `gok_boss_list`, see file for currently supported fields. Mods are responsible for setting `flag_show` (`AddFlagPersistent` has ever killed) and `flag_run` (`GameAddFlagRun` killed this run)
 

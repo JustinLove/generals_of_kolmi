@@ -9,8 +9,8 @@
 - x can see update when returning
 - x wrong total for friend
 - x check kolmi animate-out time/speed
+- x copy to bbcode
 - nightmare bosses
-- copy to bbcode
 
 can't read file:
 you can just check save00/stats/[enemy].xml and look at the kill counter - hamis248
