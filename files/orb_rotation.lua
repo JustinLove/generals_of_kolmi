@@ -15,7 +15,7 @@ if cx-cw < x and x < cx+cw*2 and cy-ch < y and y < cy+ch*2 then
 end
 
 if orbits ~= nil then
-	local frame = GameGetFrameNum() -- + (60*120) -- after playing two hours
+	local frame = GameGetFrameNum() -- + (60*60*120) -- after playing two hours
 	local outro_start = 0
 	local var = EntityGetFirstComponent( pivot, "VariableStorageComponent" )
 	if var then

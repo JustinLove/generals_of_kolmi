@@ -1,15 +1,3 @@
-- x activate effect
-- x reset flags on ng+
-  - might need separate boss flags
-- x readme
-- x extension notes
-- x ng+ bosses
-- x move ng+ eval? separate field for ng+ orbs?
-- x famine compat?
-- x can see update when returning
-- x wrong total for friend
-- x check kolmi animate-out time/speed
-- x copy to bbcode
 - nightmare bosses
 
 can't read file:
